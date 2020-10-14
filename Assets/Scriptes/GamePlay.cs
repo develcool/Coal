@@ -12,18 +12,22 @@ public class GamePlay : MonoBehaviour
     [SerializeField] private Slider bar;
     [SerializeField] private Text hpText;
     [SerializeField] private GameObject woodPref;
+    [SerializeField] private GameObject sawPref;
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("setDeltaHP",10f,10f);
         InvokeRepeating("minusHP",2f,2f);
         InvokeRepeating("spawnWood", 2f, 2f);
+        timer = Random.Range(7f, 10f);
+        InvokeRepeating("spawnSaw", timer, timer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeInSecods = Mathf.Round(timer.timeByGame);
+       // timeInSecods = Mathf.Round(timer.timeByGame);
         bar.value = MainScript.FireHP;
         hpText.text = "Fire HP = " + MainScript.FireHP;
         if(MainScript.FireHP <= 0)
@@ -31,9 +35,7 @@ public class GamePlay : MonoBehaviour
             hpText.text = "Game Over!";
             MainScript.isAliev = false;
         }
-
-        Debug.Log("=============================================================");
-        Debug.Log("deltaHp= "+deltaHP);
+        
     }
     public void setDeltaHP()
     {
@@ -50,5 +52,9 @@ public class GamePlay : MonoBehaviour
             float x = Random.Range(-7.86f, 7.86f);
             Instantiate(woodPref, new Vector2(x, -4.1f), Quaternion.identity);
         }
+    }
+    private void spawnSaw()
+    {
+        Instantiate(sawPref, new Vector2(-9.74f, -3.76f), Quaternion.identity);
     }
 }

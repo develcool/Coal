@@ -19,11 +19,7 @@ public class FirePickUp : MonoBehaviour
     {
        if(collision.gameObject.tag == "Player")
         {
-            if (MainScript.isPicked == true)
-            {
-                MainScript.isPicked = false;
-                MainScript.FireHP += 2;
-            }
+            MainScript.FireHP = 0;
         }
     }
 }

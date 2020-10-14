@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 218371893}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Delet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,6 +1050,7 @@ MonoBehaviour:
   hpText: {fileID: 623364663}
   woodPref: {fileID: 7148300827737077159, guid: 7c3b9f3be3d7a0c45941d805d7daedcf,
     type: 3}
+  sawPref: {fileID: 6105589682151370184, guid: eb4775191fcbb8f478c2a37190e2301e, type: 3}
 --- !u!1 &1354979645
 GameObject:
   m_ObjectHideFlags: 0
